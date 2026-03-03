@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import LiveBookings from "./components/LiveBookings";
-import DriverTracking from "./components/DriverTracking";
+// import DriverTracking from "./components/DriverTracking";
 
 export default function AdminPanel() {
   return (
@@ -19,7 +19,7 @@ export default function AdminPanel() {
         </h1>
 
         <LiveBookings />
-        <DriverTracking />
+        {/* <DriverTracking /> */}
 
       </div>
     </div>
