@@ -2,6 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
+import { UserRole } from '../users/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -10,9 +11,10 @@ export class AuthService {
     private jwt: JwtService,
   ) {}
 
-  async register(email: string, password: string) {
+  async register(email: string, password: string, role: UserRole) {
     const hash = await bcrypt.hash(password, 10);
-    return this.usersService.create(email, hash);
+
+    return this.usersService.create(email, hash, role);
   }
 
   async login(email: string, password: string) {
@@ -23,8 +25,17 @@ export class AuthService {
     const match = await bcrypt.compare(password, user.password);
     if (!match) throw new UnauthorizedException('Wrong password');
 
-    const token = this.jwt.sign({ id: user.id, email: user.email });
+    const token = this.jwt.sign({
+      id: user.id,
+      email: user.email,
+      role: user.role,
+    });
 
-    return { token };
+    // ⭐ IMPORTANT CHANGE
+    return {
+      token,
+      role: user.role,
+      email: user.email,
+    };
   }
 }

@@ -29,4 +29,18 @@ export class BookingsService {
       where: { id },
     });
   }
+
+  // ⭐ NEW UPDATE METHOD
+  async update(id: number, data: any) {
+    await this.bookingRepo.update(id, data);
+
+    return this.bookingRepo.findOne({
+      where: { id },
+    });
+  }
+
+  // ⭐ NEW DELETE METHOD
+  async delete(id: number) {
+    return this.bookingRepo.delete(id);
+  }
 }

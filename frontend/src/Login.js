@@ -14,7 +14,12 @@ export default function Login() {
         password,
       });
 
+      // save token
       localStorage.setItem("token", res.data.token);
+
+      // save role
+      localStorage.setItem("role", res.data.role);
+
       navigate("/dashboard");
     } catch {
       alert("Login failed");
