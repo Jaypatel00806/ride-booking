@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ride-booking/static/css/main.7deedcf2.css",
-    "main.js": "/ride-booking/static/js/main.ba1305f7.js",
+    "main.js": "/ride-booking/static/js/main.a348f191.js",
     "static/js/488.a6998d7e.chunk.js": "/ride-booking/static/js/488.a6998d7e.chunk.js",
     "index.html": "/ride-booking/index.html",
     "main.7deedcf2.css.map": "/ride-booking/static/css/main.7deedcf2.css.map",
-    "main.ba1305f7.js.map": "/ride-booking/static/js/main.ba1305f7.js.map",
+    "main.a348f191.js.map": "/ride-booking/static/js/main.a348f191.js.map",
     "488.a6998d7e.chunk.js.map": "/ride-booking/static/js/488.a6998d7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7deedcf2.css",
-    "static/js/main.ba1305f7.js"
+    "static/js/main.a348f191.js"
   ]
 }
